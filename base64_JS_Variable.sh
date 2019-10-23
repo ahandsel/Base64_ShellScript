@@ -20,9 +20,9 @@ echo "$# number of files has been detected."
 for file in "$@"
 do
   TEMP="${file/%.*}"
-  echo "let ${TEMP//-/_}_base64 = '"$(echo "data:")$(file --mime-type -b "$file")";base64,"$(base64 -i "$file")"';" >> Base64_Output_TEST.js
+  echo "let ${TEMP//-/_}_base64 = '"$(echo "data:")$(file --mime-type -b "$file")";base64,"$(base64 -i "$file")"';" >> Base64_Output.js
   # echo "let ${file%.*}_base64 = '"$(echo "data:")$(file --mime-type -b "$file")";base64,"$(base64 -i "$file")"';" >> Base64_Output.js
-  echo "" >> Base64_Output_TEST.js
+  echo "" >> Base64_Output.js
 done
 echo "The encoding is done."
 echo "The base64 strings are stored as variables in the \"Base64_Output.js\" file."
